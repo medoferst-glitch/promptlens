@@ -1,10 +1,10 @@
 export default function PrivacyPage() {
   return (
-    <main className="flex-1 bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white dark:bg-[#111111] py-20 px-4 sm:px-6 lg:px-8 transition-colors">
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-semibold text-[#1a1a1a] mb-3 tracking-[-0.5px]">Privacy Policy</h1>
-          <p className="text-[#a4a097] text-sm">Last updated: May 30, 2026</p>
+          <h1 className="text-4xl font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] mb-3 tracking-[-0.5px]">Privacy Policy</h1>
+          <p className="text-[#a4a097] dark:text-[#686868] text-sm">Last updated: May 30, 2026</p>
         </div>
 
         <div className="space-y-10 text-sm">
@@ -52,9 +52,9 @@ export default function PrivacyPage() {
                 "For privacy-related inquiries, please contact us at privacy@promptlens.ai.",
             },
           ].map((section) => (
-            <section key={section.id} id={section.id} className="border-b border-[#e5e3df] pb-10 last:border-0">
-              <h2 className="text-[#1a1a1a] font-semibold text-base mb-3">{section.title}</h2>
-              <p className="text-[#787671] leading-relaxed">{section.content}</p>
+            <section key={section.id} id={section.id} className="border-b border-[#e5e3df] dark:border-[#2e2e2e] pb-10 last:border-0">
+              <h2 className="text-[#1a1a1a] dark:text-[#f0f0f0] font-semibold text-base mb-3">{section.title}</h2>
+              <p className="text-[#787671] dark:text-[#909090] leading-relaxed">{section.content}</p>
             </section>
           ))}
         </div>

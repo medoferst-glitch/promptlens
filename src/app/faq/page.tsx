@@ -65,16 +65,16 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-[#e5e3df] last:border-0">
+    <div className="border-b border-[#e5e3df] dark:border-[#2e2e2e] last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left gap-4 group"
       >
-        <span className="text-[#1a1a1a] text-sm font-medium">
+        <span className="text-[#1a1a1a] dark:text-[#f0f0f0] text-sm font-medium">
           {q}
         </span>
         <svg
-          className={`w-4 h-4 text-[#a4a097] shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-[#a4a097] dark:text-[#686868] shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -84,7 +84,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </svg>
       </button>
       {open && (
-        <p className="text-[#787671] text-sm leading-relaxed pb-5 pr-8">{a}</p>
+        <p className="text-[#787671] dark:text-[#909090] text-sm leading-relaxed pb-5 pr-8">{a}</p>
       )}
     </div>
   );
@@ -92,11 +92,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQPage() {
   return (
-    <main className="flex-1 bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white dark:bg-[#111111] py-20 px-4 sm:px-6 lg:px-8 transition-colors">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-[-1px]">FAQ</h1>
-          <p className="text-[#787671] text-xl">Answers to the most common questions.</p>
+          <h1 className="text-5xl font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] mb-4 tracking-[-1px]">FAQ</h1>
+          <p className="text-[#787671] dark:text-[#909090] text-xl">Answers to the most common questions.</p>
         </div>
 
         <div className="space-y-8">
@@ -105,7 +105,7 @@ export default function FAQPage() {
               <p className="text-[11px] font-semibold text-[#5645d4] uppercase tracking-[1px] mb-2 px-1">
                 {section.category}
               </p>
-              <div className="bg-white border border-[#e5e3df] rounded-[12px] px-6">
+              <div className="bg-white dark:bg-[#1e1e1e] border border-[#e5e3df] dark:border-[#2e2e2e] rounded-[12px] px-6">
                 {section.items.map((item) => (
                   <FAQItem key={item.q} q={item.q} a={item.a} />
                 ))}

@@ -57,29 +57,23 @@ export default async function GalleryItemPage({ params }: Props) {
   if (!item) notFound();
 
   return (
-    <main className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white dark:bg-[#111111] py-12 px-4 sm:px-6 lg:px-8 transition-colors">
       <div className="max-w-4xl mx-auto">
         {/* Back */}
         <Link
           href="/gallery"
-          className="inline-flex items-center gap-2 text-[#787671] hover:text-[#1a1a1a] text-sm mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-[#787671] dark:text-[#909090] hover:text-[#1a1a1a] dark:hover:text-[#f0f0f0] text-sm mb-8 transition-colors"
         >
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
           Back to Gallery
         </Link>
 
         {/* Image placeholder */}
-        <div className="aspect-video bg-[#f6f5f4] rounded-[12px] flex items-center justify-center mb-8 border border-[#e5e3df]">
+        <div className="aspect-video bg-[#f6f5f4] dark:bg-[#1e1e1e] rounded-[12px] flex items-center justify-center mb-8 border border-[#e5e3df] dark:border-[#2e2e2e]">
           <svg
-            className="w-12 h-12 text-[#c8c4be]"
+            className="w-12 h-12 text-[#c8c4be] dark:text-[#3e3e3e]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -105,19 +99,19 @@ export default async function GalleryItemPage({ params }: Props) {
           ))}
         </div>
 
-        <h1 className="text-3xl font-semibold text-[#1a1a1a] mb-8 tracking-[-0.5px]">{item.title}</h1>
+        <h1 className="text-3xl font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] mb-8 tracking-[-0.5px]">{item.title}</h1>
 
         {/* Prompt box */}
-        <div className="bg-white border border-[#e5e3df] rounded-[12px] overflow-hidden mb-8">
-          <div className="flex items-center justify-between px-5 py-4 border-b border-[#e5e3df] bg-[#f6f5f4]">
-            <span className="text-[#1a1a1a] font-semibold text-sm">Prompt</span>
+        <div className="bg-white dark:bg-[#1e1e1e] border border-[#e5e3df] dark:border-[#2e2e2e] rounded-[12px] overflow-hidden mb-8">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-[#e5e3df] dark:border-[#2e2e2e] bg-[#f6f5f4] dark:bg-[#171717]">
+            <span className="text-[#1a1a1a] dark:text-[#f0f0f0] font-semibold text-sm">Prompt</span>
             <CopyButton
               text={item.prompt}
               className="text-sm text-[#5645d4] hover:text-[#4534b3] font-medium transition-colors"
             />
           </div>
           <div className="p-5">
-            <p className="text-[#37352f] text-sm leading-relaxed font-mono">{item.prompt}</p>
+            <p className="text-[#37352f] dark:text-[#d4d4d4] text-sm leading-relaxed font-mono">{item.prompt}</p>
           </div>
         </div>
 

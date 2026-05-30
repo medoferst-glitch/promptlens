@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --color-primary: #5645d4;
   --color-brand-navy: #0a1530;
   --color-canvas: #ffffff;
   --color-surface: #f6f5f4;
@@ -14,12 +15,45 @@
   --color-slate: #5d5b54;
   --color-steel: #787671;
   --color-stone: #a4a097;
-  --color-muted: #bbb8b1;
 }
 
+.dark {
+  --color-canvas: #111111;
+  --color-surface: #1e1e1e;
+  --color-surface-soft: #171717;
+  --color-hairline: #2e2e2e;
+  --color-hairline-soft: #282828;
+  --color-hairline-strong: #3e3e3e;
+  --color-ink: #f0f0f0;
+  --color-charcoal: #d4d4d4;
+  --color-slate: #a0a0a0;
+  --color-steel: #909090;
+  --color-stone: #686868;
+}
+
+/* Static shadcn tokens (same in light and dark) */
+@theme {
+  --color-primary: #5645d4;
+  --color-primary-foreground: #ffffff;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  --color-ring: #5645d4;
+}
+
+/* Dynamic shadcn tokens (reference :root / .dark variables) */
 @theme inline {
   --color-background: var(--color-canvas);
   --color-foreground: var(--color-ink);
+  --color-muted: var(--color-surface);
+  --color-muted-foreground: var(--color-steel);
+  --color-card: var(--color-canvas);
+  --color-card-foreground: var(--color-ink);
+  --color-secondary: var(--color-surface);
+  --color-secondary-foreground: var(--color-ink);
+  --color-border: var(--color-hairline);
+  --color-input: var(--color-hairline);
+  --color-accent: var(--color-surface-soft);
+  --color-accent-foreground: var(--color-ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -28,4 +62,5 @@ body {
   background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-geist-sans), Inter, -apple-system, system-ui, 'Segoe UI', Helvetica, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
