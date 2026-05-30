@@ -34,27 +34,27 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="flex-1 bg-neutral-950 py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-neutral-400 text-xl">We&apos;d love to hear from you.</p>
+          <h1 className="text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-[-1px]">Contact Us</h1>
+          <p className="text-[#787671] text-xl">We&apos;d love to hear from you.</p>
         </div>
 
         {status === "success" ? (
-          <div className="bg-green-950/40 border border-green-800/50 text-green-300 rounded-2xl p-10 text-center">
-            <div className="w-12 h-12 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="bg-[#d9f3e1] border border-[#1aae39]/20 rounded-[12px] p-10 text-center">
+            <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-[#1aae39]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-white font-semibold text-lg mb-2">Message sent!</h2>
-            <p className="text-neutral-400 text-sm mb-5">
+            <h2 className="text-[#1a1a1a] font-semibold text-lg mb-2">Message sent!</h2>
+            <p className="text-[#787671] text-sm mb-5">
               We&apos;ll get back to you within 1–2 business days.
             </p>
             <button
               onClick={() => setStatus("idle")}
-              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+              className="text-sm text-[#0075de] hover:text-[#005bab] transition-colors"
             >
               Send another message →
             </button>
@@ -62,50 +62,50 @@ export default function ContactPage() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 space-y-5"
+            className="bg-white border border-[#e5e3df] rounded-[12px] p-8 space-y-5"
           >
             {textFields.map(({ key, label, type, placeholder }) => (
               <div key={key}>
-                <label className="block text-sm font-medium text-neutral-300 mb-2">{label}</label>
+                <label className="block text-sm font-medium text-[#37352f] mb-2">{label}</label>
                 <input
                   type={type}
                   placeholder={placeholder}
                   required
                   value={form[key]}
                   onChange={(e) => setForm((prev) => ({ ...prev, [key]: e.target.value }))}
-                  className="w-full bg-neutral-950 border border-neutral-700 focus:border-indigo-500 outline-none text-white text-sm px-4 py-3 rounded-xl placeholder:text-neutral-600 transition-colors"
+                  className="w-full bg-white border border-[#c8c4be] focus:border-[#5645d4] focus:ring-0 outline-none text-[#1a1a1a] text-sm px-4 py-3 rounded-[8px] placeholder:text-[#bbb8b1] transition-colors h-11"
                 />
               </div>
             ))}
             <div>
-              <label className="block text-sm font-medium text-neutral-300 mb-2">Message</label>
+              <label className="block text-sm font-medium text-[#37352f] mb-2">Message</label>
               <textarea
                 rows={5}
                 placeholder="Tell us more…"
                 required
                 value={form.message}
                 onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-                className="w-full bg-neutral-950 border border-neutral-700 focus:border-indigo-500 outline-none text-white text-sm px-4 py-3 rounded-xl placeholder:text-neutral-600 resize-none transition-colors"
+                className="w-full bg-white border border-[#c8c4be] focus:border-[#5645d4] focus:ring-0 outline-none text-[#1a1a1a] text-sm px-4 py-3 rounded-[8px] placeholder:text-[#bbb8b1] resize-none transition-colors"
               />
             </div>
             {status === "error" && (
-              <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+              <p className="text-[#e03131] text-sm">Something went wrong. Please try again.</p>
             )}
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-900 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
+              className="w-full bg-[#5645d4] hover:bg-[#4534b3] disabled:bg-[#e5e3df] disabled:text-[#bbb8b1] disabled:cursor-not-allowed text-white font-medium py-[10px] rounded-[8px] transition-colors text-sm"
             >
               {status === "loading" ? "Sending…" : "Send Message"}
             </button>
           </form>
         )}
 
-        <p className="text-center text-neutral-500 text-sm mt-6">
+        <p className="text-center text-[#a4a097] text-sm mt-6">
           Or email us directly at{" "}
           <a
             href="mailto:support@promptlens.ai"
-            className="text-indigo-400 hover:text-indigo-300 transition-colors"
+            className="text-[#0075de] hover:text-[#005bab] transition-colors"
           >
             support@promptlens.ai
           </a>

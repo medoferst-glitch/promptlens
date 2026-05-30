@@ -68,17 +68,17 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
         onDragLeave={onDragLeave}
         onDrop={onDrop}
         className={[
-          "flex flex-col items-center justify-center gap-3 w-full rounded-xl",
+          "flex flex-col items-center justify-center gap-3 w-full rounded-[12px]",
           "border-2 border-dashed px-8 py-14 cursor-pointer select-none",
           "transition-colors duration-150",
           isDragging
-            ? "border-indigo-400 bg-indigo-950/40"
-            : "border-neutral-600 bg-neutral-900 hover:border-indigo-500 hover:bg-neutral-800",
+            ? "border-[#5645d4] bg-[#e6e0f5]"
+            : "border-[#c8c4be] bg-[#f6f5f4] hover:border-[#5645d4] hover:bg-white",
         ].join(" ")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`w-10 h-10 ${isDragging ? "text-indigo-400" : "text-neutral-400"}`}
+          className={`w-10 h-10 ${isDragging ? "text-[#5645d4]" : "text-[#a4a097]"}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -90,14 +90,14 @@ export default function DropZone({ onFileSelect }: DropZoneProps) {
             d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
           />
         </svg>
-        <p className="text-sm text-neutral-300 text-center">
+        <p className="text-sm text-[#37352f] text-center font-medium">
           Drop your art image here or click to upload
         </p>
-        <p className="text-xs text-neutral-500">JPG, PNG, WebP · max 5 MB</p>
+        <p className="text-xs text-[#a4a097]">JPG, PNG, WebP · max 5 MB</p>
       </div>
 
       {error && (
-        <p className="text-sm text-red-400 text-center">{error}</p>
+        <p className="text-sm text-[#e03131] text-center">{error}</p>
       )}
 
       <input

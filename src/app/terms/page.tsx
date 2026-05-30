@@ -1,10 +1,10 @@
 export default function TermsPage() {
   return (
-    <main className="flex-1 bg-neutral-950 py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-white mb-3">Terms of Service</h1>
-          <p className="text-neutral-500 text-sm">Last updated: May 30, 2026</p>
+          <h1 className="text-4xl font-semibold text-[#1a1a1a] mb-3 tracking-[-0.5px]">Terms of Service</h1>
+          <p className="text-[#a4a097] text-sm">Last updated: May 30, 2026</p>
         </div>
 
         <div className="space-y-10 text-sm">
@@ -58,9 +58,9 @@ export default function TermsPage() {
                 "For terms-related inquiries, please contact us at legal@promptlens.ai.",
             },
           ].map((section) => (
-            <section key={section.id} id={section.id}>
-              <h2 className="text-white font-semibold text-base mb-3">{section.title}</h2>
-              <p className="text-neutral-400 leading-relaxed">{section.content}</p>
+            <section key={section.id} id={section.id} className="border-b border-[#e5e3df] pb-10 last:border-0">
+              <h2 className="text-[#1a1a1a] font-semibold text-base mb-3">{section.title}</h2>
+              <p className="text-[#787671] leading-relaxed">{section.content}</p>
             </section>
           ))}
         </div>

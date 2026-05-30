@@ -65,16 +65,16 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-neutral-800 last:border-0">
+    <div className="border-b border-[#e5e3df] last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left gap-4 group"
       >
-        <span className="text-white text-sm font-medium group-hover:text-indigo-300 transition-colors">
+        <span className="text-[#1a1a1a] text-sm font-medium">
           {q}
         </span>
         <svg
-          className={`w-4 h-4 text-neutral-500 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-[#a4a097] shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -84,7 +84,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </svg>
       </button>
       {open && (
-        <p className="text-neutral-400 text-sm leading-relaxed pb-5 pr-8">{a}</p>
+        <p className="text-[#787671] text-sm leading-relaxed pb-5 pr-8">{a}</p>
       )}
     </div>
   );
@@ -92,20 +92,20 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQPage() {
   return (
-    <main className="flex-1 bg-neutral-950 py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-4">FAQ</h1>
-          <p className="text-neutral-400 text-xl">Answers to the most common questions.</p>
+          <h1 className="text-5xl font-semibold text-[#1a1a1a] mb-4 tracking-[-1px]">FAQ</h1>
+          <p className="text-[#787671] text-xl">Answers to the most common questions.</p>
         </div>
 
         <div className="space-y-8">
           {faqs.map((section) => (
             <div key={section.category}>
-              <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-1 px-1">
+              <p className="text-[11px] font-semibold text-[#5645d4] uppercase tracking-[1px] mb-2 px-1">
                 {section.category}
               </p>
-              <div className="bg-neutral-900 border border-neutral-800 rounded-2xl px-6">
+              <div className="bg-white border border-[#e5e3df] rounded-[12px] px-6">
                 {section.items.map((item) => (
                   <FAQItem key={item.q} q={item.q} a={item.a} />
                 ))}

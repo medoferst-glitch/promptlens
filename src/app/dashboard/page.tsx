@@ -9,14 +9,14 @@ export default async function DashboardPage() {
   const user = await currentUser();
 
   return (
-    <main className="flex-1 bg-neutral-950 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="flex-1 bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white mb-1">
+          <h1 className="text-3xl font-semibold text-[#1a1a1a] mb-1 tracking-[-0.5px]">
             Welcome back{user?.firstName ? `, ${user.firstName}` : ""}
           </h1>
-          <p className="text-neutral-400 text-sm">Here&apos;s your PromptLens overview.</p>
+          <p className="text-[#787671] text-sm">Here&apos;s your PromptLens overview.</p>
         </div>
 
         {/* Stats */}
@@ -28,11 +28,11 @@ export default async function DashboardPage() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6"
+              className="bg-[#f6f5f4] rounded-[12px] p-6"
             >
-              <p className="text-neutral-500 text-xs uppercase tracking-wider mb-2">{stat.label}</p>
-              <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-              <p className="text-neutral-600 text-xs">{stat.sub}</p>
+              <p className="text-[#787671] text-[11px] font-semibold uppercase tracking-[1px] mb-2">{stat.label}</p>
+              <p className="text-3xl font-semibold text-[#1a1a1a] mb-1">{stat.value}</p>
+              <p className="text-[#a4a097] text-xs">{stat.sub}</p>
             </div>
           ))}
         </div>
@@ -41,11 +41,11 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <Link
             href="/studio"
-            className="bg-indigo-950/40 border border-indigo-800/40 hover:border-indigo-600 rounded-2xl p-6 transition-colors group"
+            className="bg-[#e6e0f5] rounded-[12px] p-6 transition-colors group block"
           >
-            <div className="w-10 h-10 bg-indigo-900/50 rounded-xl flex items-center justify-center mb-4">
+            <div className="w-10 h-10 bg-white/70 rounded-[8px] flex items-center justify-center mb-4">
               <svg
-                className="w-5 h-5 text-indigo-400"
+                className="w-5 h-5 text-[#5645d4]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -58,18 +58,16 @@ export default async function DashboardPage() {
                 />
               </svg>
             </div>
-            <h2 className="text-white font-semibold mb-1 group-hover:text-indigo-300 transition-colors">
-              Go to Studio
-            </h2>
-            <p className="text-neutral-400 text-sm">Upload an image and generate a new prompt.</p>
+            <h2 className="text-[#37352f] font-semibold mb-1">Go to Studio</h2>
+            <p className="text-[#5d5b54] text-sm">Upload an image and generate a new prompt.</p>
           </Link>
           <Link
             href="/history"
-            className="bg-neutral-900 border border-neutral-800 hover:border-neutral-600 rounded-2xl p-6 transition-colors group"
+            className="bg-[#f6f5f4] border border-[#e5e3df] rounded-[12px] p-6 transition-colors group block"
           >
-            <div className="w-10 h-10 bg-neutral-800 rounded-xl flex items-center justify-center mb-4">
+            <div className="w-10 h-10 bg-white rounded-[8px] flex items-center justify-center mb-4 border border-[#e5e3df]">
               <svg
-                className="w-5 h-5 text-neutral-400"
+                className="w-5 h-5 text-[#787671]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -82,28 +80,26 @@ export default async function DashboardPage() {
                 />
               </svg>
             </div>
-            <h2 className="text-white font-semibold mb-1 group-hover:text-neutral-100 transition-colors">
-              View History
-            </h2>
-            <p className="text-neutral-400 text-sm">Browse your previously generated prompts.</p>
+            <h2 className="text-[#1a1a1a] font-semibold mb-1">View History</h2>
+            <p className="text-[#787671] text-sm">Browse your previously generated prompts.</p>
           </Link>
         </div>
 
         {/* Recent prompts */}
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-white font-semibold">Recent Prompts</h2>
+            <h2 className="text-[#1a1a1a] font-semibold">Recent Prompts</h2>
             <Link
               href="/history"
-              className="text-indigo-400 hover:text-indigo-300 text-sm transition-colors"
+              className="text-[#0075de] hover:text-[#005bab] text-sm transition-colors"
             >
               See all →
             </Link>
           </div>
-          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-12 text-center">
-            <div className="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-white border border-[#e5e3df] rounded-[12px] p-12 text-center">
+            <div className="w-12 h-12 bg-[#f6f5f4] rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
-                className="w-6 h-6 text-neutral-600"
+                className="w-6 h-6 text-[#c8c4be]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -116,10 +112,10 @@ export default async function DashboardPage() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-500 text-sm mb-3">No prompts yet</p>
+            <p className="text-[#a4a097] text-sm mb-3">No prompts yet</p>
             <Link
               href="/studio"
-              className="text-indigo-400 hover:text-indigo-300 text-sm transition-colors"
+              className="text-[#0075de] hover:text-[#005bab] text-sm transition-colors"
             >
               Generate your first prompt →
             </Link>
